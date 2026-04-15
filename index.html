@@ -12,6 +12,16 @@
 </head>
 <body>
 
+  <!-- Custom cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ============ MARQUEE BANNER ============ -->
   <div class="marquee">
     <div class="marquee-track">
@@ -35,6 +45,10 @@
         <span class="logo-text">PIXELFORGE</span>
       </a>
       <nav class="nav-links">
+        <span class="nav-status">
+          <span class="pulse-dot"></span>
+          <span>AVAILABLE</span>
+        </span>
         <a href="#work">WORK</a>
         <a href="#services">SERVICES</a>
         <a href="#about">ABOUT</a>
@@ -65,7 +79,7 @@
           measurable results for ambitious brands worldwide.
         </p>
 
-        <a href="#work" class="btn-primary">
+        <a href="#work" class="btn-primary magnetic">
           <span>EXPLORE OUR WORK</span>
           <span class="arrow">→</span>
         </a>
@@ -99,19 +113,19 @@
   <!-- ============ STATS ============ -->
   <section class="stats">
     <div class="stat">
-      <div class="stat-num">150+</div>
+      <div class="stat-num" data-count="150" data-suffix="+">0+</div>
       <div class="stat-label">Projects Delivered</div>
     </div>
     <div class="stat">
-      <div class="stat-num">50+</div>
+      <div class="stat-num" data-count="50" data-suffix="+">0+</div>
       <div class="stat-label">Happy Clients</div>
     </div>
     <div class="stat">
-      <div class="stat-num">15</div>
+      <div class="stat-num" data-count="15" data-suffix="">0</div>
       <div class="stat-label">Awards Won</div>
     </div>
     <div class="stat">
-      <div class="stat-num">5yrs</div>
+      <div class="stat-num" data-count="5" data-suffix="yrs">0yrs</div>
       <div class="stat-label">Experience</div>
     </div>
   </section>
@@ -143,35 +157,45 @@
             <h3>BRAND IDENTITY</h3>
             <span class="plus">+</span>
           </div>
-          <p>Creating distinctive visual identities that capture essence and resonate deeply with target audiences.</p>
+          <div class="service-body">
+            <p>Creating distinctive visual identities that capture essence and resonate deeply with target audiences. Logo systems, guidelines, and brand experiences built to last.</p>
+          </div>
         </li>
         <li class="service">
           <div class="service-head">
             <h3>WEB DESIGN</h3>
             <span class="plus">+</span>
           </div>
-          <p>Designing responsive, user-centric websites that blend aesthetics with seamless functionality.</p>
+          <div class="service-body">
+            <p>Designing responsive, user-centric websites that blend aesthetics with seamless functionality. From concept to launch, optimized for every screen and engineered for speed.</p>
+          </div>
         </li>
         <li class="service">
           <div class="service-head">
             <h3>DIGITAL PRODUCTS</h3>
             <span class="plus">+</span>
           </div>
-          <p>Building intuitive digital products that solve real problems and delight users at every touchpoint.</p>
+          <div class="service-body">
+            <p>Building intuitive digital products that solve real problems and delight users at every touchpoint. End-to-end product design from discovery to launch.</p>
+          </div>
         </li>
         <li class="service">
           <div class="service-head">
             <h3>CREATIVE STRATEGY</h3>
             <span class="plus">+</span>
           </div>
-          <p>Developing comprehensive strategies that align creative vision with measurable business objectives.</p>
+          <div class="service-body">
+            <p>Developing comprehensive strategies that align creative vision with measurable business objectives. Research, positioning, and roadmaps that actually ship.</p>
+          </div>
         </li>
         <li class="service">
           <div class="service-head">
             <h3>MOTION DESIGN</h3>
             <span class="plus">+</span>
           </div>
-          <p>Bringing brands to life through dynamic animation and engaging visual storytelling.</p>
+          <div class="service-body">
+            <p>Bringing brands to life through dynamic animation and engaging visual storytelling. Microinteractions, brand films, and motion systems with purpose.</p>
+          </div>
         </li>
       </ul>
     </div>
@@ -299,17 +323,29 @@
 
         <div class="about-stats">
           <div class="about-stat">
-            <div class="as-num">50+</div>
+            <div class="as-num" data-count="50" data-suffix="+">0+</div>
             <div class="as-label">Global Partners</div>
           </div>
           <div class="about-stat">
-            <div class="as-num">98%</div>
+            <div class="as-num" data-count="98" data-suffix="%">0%</div>
             <div class="as-label">Satisfaction Rate</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Secondary marquee -->
+  <div class="marquee marquee-dark">
+    <div class="marquee-track">
+      <span>READY WHEN YOU ARE</span><span class="star">✦</span>
+      <span>LET'S MAKE SOMETHING</span><span class="star">✦</span>
+      <span>BUILT DIFFERENT</span><span class="star">✦</span>
+      <span>READY WHEN YOU ARE</span><span class="star">✦</span>
+      <span>LET'S MAKE SOMETHING</span><span class="star">✦</span>
+      <span>BUILT DIFFERENT</span><span class="star">✦</span>
+    </div>
+  </div>
 
   <!-- ============ CTA ============ -->
   <section id="contact" class="cta">
@@ -318,7 +354,7 @@
       LET'S<br/>
       <span class="cta-outline">CREATE</span>
     </h2>
-    <a href="mailto:hello@pixelforge.com" class="cta-pill">
+    <a href="mailto:hello@pixelforge.com" class="cta-pill magnetic">
       <span>START YOUR PROJECT</span>
       <span class="arrow">→</span>
     </a>
