@@ -161,12 +161,10 @@ if (dot && ring && !matchMedia('(pointer: coarse)').matches) {
 
 /* ---------- Subtle hero parallax ---------- */
 const heroPhoto = document.querySelector('.hero-photo');
-const heroThumb = document.querySelector('.hero-thumb');
-if (heroPhoto && heroThumb && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if (heroPhoto && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y > 800) return;
     heroPhoto.style.transform = `translateY(${y * 0.06}px)`;
-    heroThumb.style.transform = `rotate(6deg) translateY(${y * -0.04}px)`;
   }, { passive: true });
 }
