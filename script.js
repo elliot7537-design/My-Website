@@ -2,6 +2,189 @@
    PixelForge — interactions
    ============================================================ */
 
+/* ---------- i18n translations ---------- */
+const translations = {
+  en: {
+    'nav.status': 'AVAILABLE', 'nav.work': 'WORK', 'nav.services': 'SERVICES',
+    'nav.about': 'ABOUT', 'nav.contact': 'CONTACT',
+    'hero.tag': 'EST. 2020', 'hero.we': 'WE', 'hero.create': 'create',
+    'hero.bold': 'BOLD', 'hero.desig': 'DESIG', 'hero.impac': 'IMPAC',
+    'hero.tape': 'that drives business',
+    'hero.sub': 'A digital design studio creating bold, memorable experiences that challenge conventions and drive measurable results for ambitious brands worldwide.',
+    'hero.cta': 'EXPLORE OUR WORK',
+    'hero.badgeLabel': 'PROJECTS',
+    'hero.captionKicker': 'VISUAL POETRY',
+    'hero.captionTitle': 'Where Ideas Become Reality',
+    'stats.projects': 'Projects Delivered', 'stats.clients': 'Happy Clients',
+    'stats.awards': 'Awards Won', 'stats.experience': 'Experience',
+    'services.kicker': 'OUR EXPERTISE',
+    'services.t1': 'FULL-', 'services.t2': 'SPECTRUM',
+    'services.t3': 'CREATIVE', 'services.t4': 'SOLUTIONS',
+    'services.intro': 'From brand identity to digital experiences, we deliver end-to-end design solutions that transform businesses and captivate audiences.',
+    'services.since': 'SINCE 2020',
+    'service1.name': 'BRAND IDENTITY',
+    'service1.body': 'Creating distinctive visual identities that capture essence and resonate deeply with target audiences. Logo systems, guidelines, and brand experiences built to last.',
+    'service2.name': 'WEB DESIGN',
+    'service2.body': 'Designing responsive, user-centric websites that blend aesthetics with seamless functionality. From concept to launch, optimized for every screen and engineered for speed.',
+    'service3.name': 'DIGITAL PRODUCTS',
+    'service3.body': 'Building intuitive digital products that solve real problems and delight users at every touchpoint. End-to-end product design from discovery to launch.',
+    'service4.name': 'CREATIVE STRATEGY',
+    'service4.body': 'Developing comprehensive strategies that align creative vision with measurable business objectives. Research, positioning, and roadmaps that actually ship.',
+    'service5.name': 'MOTION DESIGN',
+    'service5.body': 'Bringing brands to life through dynamic animation and engaging visual storytelling. Microinteractions, brand films, and motion systems with purpose.',
+    'work.kicker': 'OUR PORTFOLIO', 'work.t1': 'SELECTED', 'work.t2': 'PROJECTS',
+    'work.intro': 'Showcasing our latest work that pushed creative boundaries and delivered exceptional results.',
+    'project.viewCase': 'VIEW CASE STUDY →',
+    'p1.tags': 'E-COMMERCE · BRAND',
+    'p1.body': 'A complete brand transformation for a next-gen streetwear label, including visual identity, e-commerce platform, and digital campaigns that increased conversions by 240%.',
+    'p1.chips': 'BRANDING|WEB DESIGN|STRATEGY',
+    'p2.tags': 'DIGITAL · MOTION',
+    'p2.body': 'An immersive portfolio experience for a creative studio, featuring custom animations, interactive project showcases, and a bold visual identity.',
+    'p2.chips': 'WEB DESIGN|UX/UI|DEVELOPMENT',
+    'p3.tags': 'SAAS · PRODUCT',
+    'p3.body': 'A sophisticated trading platform redesign focused on clarity, speed, and user confidence in high-stakes financial decisions.',
+    'p3.chips': 'PRODUCT DESIGN|UX/UI',
+    'p4.tags': 'MUSIC · PLATFORM',
+    'p4.body': 'A streaming platform that pairs artist-first, bold visual design, seamless UX, and innovative discovery features.',
+    'p4.chips': 'BRANDING|WEB DESIGN|MOTION',
+    'about.kicker': 'OUR STORY',
+    'about.title': 'THE STUDIO<br/>BEHIND THE<br/>WORK',
+    'about.b1.title': 'TALENT FIRST',
+    'about.b1.sub': 'No hierarchies. Just good work.',
+    'about.b2.title': 'RESULTS DRIVEN',
+    'about.b2.sub': 'Design that delivers ROI.',
+    'about.quote': '"After 15 years in traditional agencies, we saw the same problems repeatedly. Talented designers spending more time in meetings than creating. Clients paying for process instead of progress.<br/><br/>So we built PixelForge differently. No endless meetings, no office politics, no pitches that promise everything. Just talented designers doing what they do best.<br/><br/>We create design that actually solves problems. We\'re obsessive about the details because that\'s what our clients pay us for. To care as much as they do.<br/><br/><strong>That\'s the PixelForge way. Simple, but not easy.</strong>',
+    'about.s1': 'Global Partners', 'about.s2': 'Satisfaction Rate',
+    'cta.kicker': 'GOT AN IDEA?', 'cta.w1': "LET'S", 'cta.w2': 'CREATE',
+    'cta.btn': 'START YOUR PROJECT',
+    'midbar.sub': "WE'RE CURRENTLY ACCEPTING NEW PROJECTS",
+    'footer.desc': 'A digital design studio crafting memorable experiences that drive business forward.',
+    'footer.links': 'LINKS', 'footer.social': 'SOCIAL',
+    'footer.work': 'Work', 'footer.services': 'Services',
+    'footer.about': 'About', 'footer.contact': 'Contact',
+    'footer.copy': '© 2025 PixelForge. All rights reserved.',
+    'footer.legal': 'PRIVACY · TERMS',
+  },
+  es: {
+    'nav.status': 'DISPONIBLE', 'nav.work': 'PROYECTOS', 'nav.services': 'SERVICIOS',
+    'nav.about': 'NOSOTROS', 'nav.contact': 'CONTACTO',
+    'hero.tag': 'DESDE 2020', 'hero.we': 'CREA', 'hero.create': 'mos',
+    'hero.bold': 'DISEÑO', 'hero.desig': 'AUDA', 'hero.impac': 'IMPAC',
+    'hero.tape': 'que impulsa marcas',
+    'hero.sub': 'Un estudio de diseño digital que crea experiencias audaces y memorables, desafiando convenciones y generando resultados medibles para marcas ambiciosas en todo el mundo.',
+    'hero.cta': 'EXPLORA NUESTRO TRABAJO',
+    'hero.badgeLabel': 'PROYECTOS',
+    'hero.captionKicker': 'POESÍA VISUAL',
+    'hero.captionTitle': 'Donde las Ideas se Hacen Realidad',
+    'stats.projects': 'Proyectos Entregados', 'stats.clients': 'Clientes Felices',
+    'stats.awards': 'Premios Ganados', 'stats.experience': 'Experiencia',
+    'services.kicker': 'NUESTRA EXPERIENCIA',
+    'services.t1': 'SOLUCIONES', 'services.t2': 'CREATIVAS',
+    'services.t3': 'DE', 'services.t4': 'ESPECTRO COMPLETO',
+    'services.intro': 'Desde identidad de marca hasta experiencias digitales, ofrecemos soluciones de diseño integrales que transforman negocios y cautivan audiencias.',
+    'services.since': 'DESDE 2020',
+    'service1.name': 'IDENTIDAD DE MARCA',
+    'service1.body': 'Creamos identidades visuales distintivas que capturan la esencia y conectan profundamente con el público objetivo. Sistemas de logotipo, guías y experiencias de marca diseñadas para perdurar.',
+    'service2.name': 'DISEÑO WEB',
+    'service2.body': 'Diseñamos sitios web responsivos y centrados en el usuario que combinan estética con funcionalidad fluida. Del concepto al lanzamiento, optimizados para cada pantalla.',
+    'service3.name': 'PRODUCTOS DIGITALES',
+    'service3.body': 'Construimos productos digitales intuitivos que resuelven problemas reales y deleitan a los usuarios. Diseño de producto integral, desde la investigación hasta el lanzamiento.',
+    'service4.name': 'ESTRATEGIA CREATIVA',
+    'service4.body': 'Desarrollamos estrategias integrales que alinean la visión creativa con objetivos de negocio medibles. Investigación, posicionamiento y roadmaps que se ejecutan.',
+    'service5.name': 'DISEÑO EN MOVIMIENTO',
+    'service5.body': 'Damos vida a las marcas con animación dinámica y narrativa visual envolvente. Microinteracciones, films de marca y sistemas de motion con propósito.',
+    'work.kicker': 'NUESTRO PORTAFOLIO', 'work.t1': 'PROYECTOS', 'work.t2': 'DESTACADOS',
+    'work.intro': 'Mostrando nuestro trabajo más reciente que rompe los límites creativos y entrega resultados excepcionales.',
+    'project.viewCase': 'VER CASO DE ESTUDIO →',
+    'p1.tags': 'E-COMMERCE · MARCA',
+    'p1.body': 'Una transformación de marca completa para una etiqueta de streetwear de nueva generación, incluyendo identidad visual, plataforma e-commerce y campañas que aumentaron las conversiones un 240%.',
+    'p1.chips': 'BRANDING|DISEÑO WEB|ESTRATEGIA',
+    'p2.tags': 'DIGITAL · MOTION',
+    'p2.body': 'Una experiencia de portafolio inmersiva para un estudio creativo, con animaciones personalizadas, muestrarios de proyectos interactivos y una identidad visual audaz.',
+    'p2.chips': 'DISEÑO WEB|UX/UI|DESARROLLO',
+    'p3.tags': 'SAAS · PRODUCTO',
+    'p3.body': 'Rediseño de una plataforma de trading enfocada en claridad, velocidad y confianza del usuario en decisiones financieras de alto riesgo.',
+    'p3.chips': 'DISEÑO DE PRODUCTO|UX/UI',
+    'p4.tags': 'MÚSICA · PLATAFORMA',
+    'p4.body': 'Una plataforma de streaming que combina diseño audaz enfocado en el artista, UX fluida y funciones innovadoras de descubrimiento.',
+    'p4.chips': 'BRANDING|DISEÑO WEB|MOTION',
+    'about.kicker': 'NUESTRA HISTORIA',
+    'about.title': 'EL ESTUDIO<br/>DETRÁS DEL<br/>TRABAJO',
+    'about.b1.title': 'TALENTO PRIMERO',
+    'about.b1.sub': 'Sin jerarquías. Solo buen trabajo.',
+    'about.b2.title': 'ORIENTADOS A RESULTADOS',
+    'about.b2.sub': 'Diseño que genera ROI.',
+    'about.quote': '"Después de 15 años en agencias tradicionales, vimos los mismos problemas repetidamente. Diseñadores talentosos pasando más tiempo en reuniones que creando. Clientes pagando por proceso en vez de progreso.<br/><br/>Por eso construimos PixelForge de otra forma. Sin reuniones interminables, sin política de oficina, sin promesas vacías. Solo diseñadores talentosos haciendo lo que mejor saben hacer.<br/><br/>Creamos diseño que realmente resuelve problemas. Somos obsesivos con los detalles porque eso es lo que nuestros clientes nos pagan. Para preocuparnos tanto como ellos.<br/><br/><strong>Así es PixelForge. Simple, pero no fácil.</strong>',
+    'about.s1': 'Socios Globales', 'about.s2': 'Tasa de Satisfacción',
+    'cta.kicker': '¿TIENES UNA IDEA?', 'cta.w1': 'VAMOS A', 'cta.w2': 'CREAR',
+    'cta.btn': 'INICIA TU PROYECTO',
+    'midbar.sub': 'ACTUALMENTE ACEPTANDO NUEVOS PROYECTOS',
+    'footer.desc': 'Un estudio de diseño digital creando experiencias memorables que impulsan el negocio.',
+    'footer.links': 'ENLACES', 'footer.social': 'REDES',
+    'footer.work': 'Proyectos', 'footer.services': 'Servicios',
+    'footer.about': 'Nosotros', 'footer.contact': 'Contacto',
+    'footer.copy': '© 2025 PixelForge. Todos los derechos reservados.',
+    'footer.legal': 'PRIVACIDAD · TÉRMINOS',
+  }
+};
+
+function applyLanguage(lang) {
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (dict[key] != null) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (dict[key] != null) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-chips]').forEach(el => {
+    const key = el.getAttribute('data-i18n-chips');
+    if (dict[key] != null) {
+      el.innerHTML = dict[key].split('|').map(s => `<span>${s}</span>`).join('');
+    }
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  localStorage.setItem('pf-lang', lang);
+
+  // Re-split hero title characters for letter-reveal after text swap
+  splitHeroChars();
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
+
+/* ---------- Hero letter-by-letter reveal ---------- */
+function splitHeroChars() {
+  const title = document.querySelector('.hero-title');
+  if (!title) return;
+
+  // Targets only visible-text elements (not containers like .tape)
+  const lines = title.querySelectorAll('[data-i18n]');
+  lines.forEach(el => {
+    // Skip the tape overlay which is a data-i18n child
+    if (el.classList.contains('tape')) return;
+    const text = el.textContent;
+    el.innerHTML = '';
+    [...text].forEach((ch, i) => {
+      const span = document.createElement('span');
+      span.className = 'char';
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      span.style.transitionDelay = (i * 0.035) + 's';
+      el.appendChild(span);
+    });
+  });
+
+  // Trigger
+  requestAnimationFrame(() => title.classList.add('animated'));
+}
+
 /* ---------- Smooth anchor scroll ---------- */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
@@ -161,12 +344,37 @@ if (dot && ring && !matchMedia('(pointer: coarse)').matches) {
 
 /* ---------- Subtle hero parallax ---------- */
 const heroPhoto = document.querySelector('.hero-photo');
-const heroThumb = document.querySelector('.hero-thumb');
-if (heroPhoto && heroThumb && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+if (heroPhoto && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
     if (y > 800) return;
     heroPhoto.style.transform = `translateY(${y * 0.06}px)`;
-    heroThumb.style.transform = `rotate(6deg) translateY(${y * -0.04}px)`;
   }, { passive: true });
 }
+
+/* ---------- CTA "CREATE" scale on scroll ---------- */
+const ctaOutline = document.querySelector('.cta-outline');
+if (ctaOutline && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  window.addEventListener('scroll', () => {
+    const rect = ctaOutline.getBoundingClientRect();
+    const vh = window.innerHeight;
+    // Compute 0..1 based on element entering the viewport
+    const visibility = Math.max(0, Math.min(1, (vh - rect.top) / (vh * 0.6)));
+    const scale = 0.9 + visibility * 0.18;
+    ctaOutline.style.transform = `scale(${scale})`;
+  }, { passive: true });
+}
+
+/* ---------- Service row micro stagger on enter ---------- */
+const serviceRows = document.querySelectorAll('.service');
+serviceRows.forEach((row, i) => {
+  row.style.setProperty('--stagger', `${i * 0.08}s`);
+});
+
+/* ---------- Init ---------- */
+(function init() {
+  const saved = localStorage.getItem('pf-lang') || 'en';
+  applyLanguage(saved);
+  // splitHeroChars is called inside applyLanguage
+  setTimeout(() => document.querySelector('.hero-title')?.classList.add('animated'), 80);
+})();

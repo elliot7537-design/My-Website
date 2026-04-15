@@ -47,12 +47,16 @@
       <nav class="nav-links">
         <span class="nav-status">
           <span class="pulse-dot"></span>
-          <span>AVAILABLE</span>
+          <span data-i18n="nav.status">AVAILABLE</span>
         </span>
-        <a href="#work">WORK</a>
-        <a href="#services">SERVICES</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact" class="nav-cta">CONTACT</a>
+        <a href="#work" data-i18n="nav.work">WORK</a>
+        <a href="#services" data-i18n="nav.services">SERVICES</a>
+        <a href="#about" data-i18n="nav.about">ABOUT</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="#contact" class="nav-cta" data-i18n="nav.contact">CONTACT</a>
       </nav>
     </div>
   </header>
@@ -63,24 +67,24 @@
       <div class="hero-copy">
         <div class="hero-tag">
           <span class="tag-dot"></span>
-          <span>EST. 2020</span>
+          <span data-i18n="hero.tag">EST. 2020</span>
         </div>
         <h1 class="hero-title">
-          <span class="line">WE <span class="star-badge">★</span></span>
-          <span class="line italic">create</span>
-          <span class="line">BOLD</span>
-          <span class="line">DESIG<span class="tape">that drives businesses</span></span>
-          <span class="line strike">IMPAC<span class="underline-scribble"></span></span>
+          <span class="line"><span data-i18n="hero.we">WE</span> <span class="star-badge">★</span></span>
+          <span class="line italic" data-i18n="hero.create">create</span>
+          <span class="line" data-i18n="hero.bold">BOLD</span>
+          <span class="line"><span data-i18n="hero.desig">DESIG</span><span class="tape" data-i18n="hero.tape">that drives businesses</span></span>
+          <span class="line strike"><span data-i18n="hero.impac">IMPAC</span><span class="underline-scribble"></span></span>
         </h1>
 
-        <p class="hero-sub">
+        <p class="hero-sub" data-i18n="hero.sub">
           A digital design studio creating bold, memorable
           experiences that challenge conventions and drive
           measurable results for ambitious brands worldwide.
         </p>
 
         <a href="#work" class="btn-primary magnetic">
-          <span>EXPLORE OUR WORK</span>
+          <span data-i18n="hero.cta">EXPLORE OUR WORK</span>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -88,23 +92,24 @@
       <aside class="hero-side">
         <div class="projects-badge">
           <div class="badge-num">150+</div>
-          <div class="badge-label">PROJECTS</div>
+          <div class="badge-label" data-i18n="hero.badgeLabel">PROJECTS</div>
         </div>
 
         <div class="hero-photo">
           <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=900&q=80" alt="Creative director portrait" />
           <div class="photo-caption">
-            <div class="caption-kicker">VISUAL POETRY</div>
-            <div class="caption-title">Where Ideas Become Reality</div>
+            <div class="caption-kicker" data-i18n="hero.captionKicker">VISUAL POETRY</div>
+            <div class="caption-title" data-i18n="hero.captionTitle">Where Ideas Become Reality</div>
           </div>
         </div>
 
-        <div class="hero-thumb">
-          <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=400&q=80" alt="Design sample" />
-        </div>
-
-        <div class="hero-spin">
-          <span class="spin-star">✦</span>
+        <div class="hero-extras">
+          <div class="hero-thumb">
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=400&q=80" alt="Design sample" />
+          </div>
+          <div class="hero-spin">
+            <span class="spin-star">✦</span>
+          </div>
         </div>
       </aside>
     </div>
@@ -114,19 +119,19 @@
   <section class="stats">
     <div class="stat">
       <div class="stat-num" data-count="150" data-suffix="+">0+</div>
-      <div class="stat-label">Projects Delivered</div>
+      <div class="stat-label" data-i18n="stats.projects">Projects Delivered</div>
     </div>
     <div class="stat">
       <div class="stat-num" data-count="50" data-suffix="+">0+</div>
-      <div class="stat-label">Happy Clients</div>
+      <div class="stat-label" data-i18n="stats.clients">Happy Clients</div>
     </div>
     <div class="stat">
       <div class="stat-num" data-count="15" data-suffix="">0</div>
-      <div class="stat-label">Awards Won</div>
+      <div class="stat-label" data-i18n="stats.awards">Awards Won</div>
     </div>
     <div class="stat">
       <div class="stat-num" data-count="5" data-suffix="yrs">0yrs</div>
-      <div class="stat-label">Experience</div>
+      <div class="stat-label" data-i18n="stats.experience">Experience</div>
     </div>
   </section>
 
@@ -134,67 +139,67 @@
   <section id="services" class="services">
     <div class="services-grid">
       <div class="services-head">
-        <div class="section-label">OUR EXPERTISE</div>
+        <div class="section-label"><span data-i18n="services.kicker">OUR EXPERTISE</span></div>
         <h2 class="services-title">
-          FULL-<br/>SPECTRUM<br/>
-          <span class="red">CREATIVE</span><br/>
-          <span class="red">SOLUTIONS</span>
+          <span data-i18n="services.t1">FULL-</span><br/><span data-i18n="services.t2">SPECTRUM</span><br/>
+          <span class="red" data-i18n="services.t3">CREATIVE</span><br/>
+          <span class="red" data-i18n="services.t4">SOLUTIONS</span>
         </h2>
-        <p class="services-intro">
+        <p class="services-intro" data-i18n="services.intro">
           From brand identity to digital experiences, we
           deliver end-to-end design solutions that transform
           businesses and captivate audiences.
         </p>
         <div class="services-decor">
           <div class="decor-box"></div>
-          <div class="decor-label">SINCE 2020</div>
+          <div class="decor-label" data-i18n="services.since">SINCE 2020</div>
         </div>
       </div>
 
       <ul class="services-list">
         <li class="service">
           <div class="service-head">
-            <h3>BRAND IDENTITY</h3>
+            <h3 data-i18n="service1.name">BRAND IDENTITY</h3>
             <span class="plus">+</span>
           </div>
           <div class="service-body">
-            <p>Creating distinctive visual identities that capture essence and resonate deeply with target audiences. Logo systems, guidelines, and brand experiences built to last.</p>
+            <p data-i18n="service1.body">Creating distinctive visual identities that capture essence and resonate deeply with target audiences. Logo systems, guidelines, and brand experiences built to last.</p>
           </div>
         </li>
         <li class="service">
           <div class="service-head">
-            <h3>WEB DESIGN</h3>
+            <h3 data-i18n="service2.name">WEB DESIGN</h3>
             <span class="plus">+</span>
           </div>
           <div class="service-body">
-            <p>Designing responsive, user-centric websites that blend aesthetics with seamless functionality. From concept to launch, optimized for every screen and engineered for speed.</p>
+            <p data-i18n="service2.body">Designing responsive, user-centric websites that blend aesthetics with seamless functionality. From concept to launch, optimized for every screen and engineered for speed.</p>
           </div>
         </li>
         <li class="service">
           <div class="service-head">
-            <h3>DIGITAL PRODUCTS</h3>
+            <h3 data-i18n="service3.name">DIGITAL PRODUCTS</h3>
             <span class="plus">+</span>
           </div>
           <div class="service-body">
-            <p>Building intuitive digital products that solve real problems and delight users at every touchpoint. End-to-end product design from discovery to launch.</p>
+            <p data-i18n="service3.body">Building intuitive digital products that solve real problems and delight users at every touchpoint. End-to-end product design from discovery to launch.</p>
           </div>
         </li>
         <li class="service">
           <div class="service-head">
-            <h3>CREATIVE STRATEGY</h3>
+            <h3 data-i18n="service4.name">CREATIVE STRATEGY</h3>
             <span class="plus">+</span>
           </div>
           <div class="service-body">
-            <p>Developing comprehensive strategies that align creative vision with measurable business objectives. Research, positioning, and roadmaps that actually ship.</p>
+            <p data-i18n="service4.body">Developing comprehensive strategies that align creative vision with measurable business objectives. Research, positioning, and roadmaps that actually ship.</p>
           </div>
         </li>
         <li class="service">
           <div class="service-head">
-            <h3>MOTION DESIGN</h3>
+            <h3 data-i18n="service5.name">MOTION DESIGN</h3>
             <span class="plus">+</span>
           </div>
           <div class="service-body">
-            <p>Bringing brands to life through dynamic animation and engaging visual storytelling. Microinteractions, brand films, and motion systems with purpose.</p>
+            <p data-i18n="service5.body">Bringing brands to life through dynamic animation and engaging visual storytelling. Microinteractions, brand films, and motion systems with purpose.</p>
           </div>
         </li>
       </ul>
@@ -205,10 +210,10 @@
   <section id="work" class="work">
     <div class="work-head">
       <div>
-        <div class="section-label dark">OUR PORTFOLIO</div>
-        <h2 class="work-title">SELECTED<br/><span class="red">PROJECTS</span></h2>
+        <div class="section-label dark"><span data-i18n="work.kicker">OUR PORTFOLIO</span></div>
+        <h2 class="work-title"><span data-i18n="work.t1">SELECTED</span><br/><span class="red" data-i18n="work.t2">PROJECTS</span></h2>
       </div>
-      <p class="work-intro">
+      <p class="work-intro" data-i18n="work.intro">
         Showcasing our latest work that pushed creative
         boundaries and delivered exceptional results.
       </p>
@@ -221,13 +226,13 @@
           <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=900&q=80" alt="NeonWave project" />
         </div>
         <div class="project-meta">
-          <div class="project-tags">E-COMMERCE · BRAND</div>
+          <div class="project-tags" data-i18n="p1.tags">E-COMMERCE · BRAND</div>
           <h3>NEONWAVE</h3>
-          <p>A complete brand transformation for a next-gen streetwear label, including visual identity, e-commerce platform, and digital campaigns that increased conversions by 240%.</p>
-          <div class="project-chips">
+          <p data-i18n="p1.body">A complete brand transformation for a next-gen streetwear label, including visual identity, e-commerce platform, and digital campaigns that increased conversions by 240%.</p>
+          <div class="project-chips" data-i18n-chips="p1.chips">
             <span>BRANDING</span><span>WEB DESIGN</span><span>STRATEGY</span>
           </div>
-          <a href="#" class="view-case">VIEW CASE STUDY →</a>
+          <a href="#" class="view-case" data-i18n="project.viewCase">VIEW CASE STUDY →</a>
         </div>
       </article>
 
@@ -237,13 +242,13 @@
           <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=80" alt="Flux Studio project" />
         </div>
         <div class="project-meta">
-          <div class="project-tags">DIGITAL · MOTION</div>
+          <div class="project-tags" data-i18n="p2.tags">DIGITAL · MOTION</div>
           <h3>FLUX STUDIO</h3>
-          <p>An immersive portfolio experience for a creative studio, featuring custom animations, interactive project showcases, and a bold visual identity.</p>
-          <div class="project-chips">
+          <p data-i18n="p2.body">An immersive portfolio experience for a creative studio, featuring custom animations, interactive project showcases, and a bold visual identity.</p>
+          <div class="project-chips" data-i18n-chips="p2.chips">
             <span>WEB DESIGN</span><span>UX/UI</span><span>DEVELOPMENT</span>
           </div>
-          <a href="#" class="view-case">VIEW CASE STUDY →</a>
+          <a href="#" class="view-case" data-i18n="project.viewCase">VIEW CASE STUDY →</a>
         </div>
       </article>
 
@@ -253,13 +258,13 @@
           <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=900&q=80" alt="Quantum project" />
         </div>
         <div class="project-meta">
-          <div class="project-tags">SAAS · PRODUCT</div>
+          <div class="project-tags" data-i18n="p3.tags">SAAS · PRODUCT</div>
           <h3>QUANTUM</h3>
-          <p>A sophisticated trading platform redesign focused on clarity, speed, and user confidence in high-stakes financial decisions.</p>
-          <div class="project-chips">
+          <p data-i18n="p3.body">A sophisticated trading platform redesign focused on clarity, speed, and user confidence in high-stakes financial decisions.</p>
+          <div class="project-chips" data-i18n-chips="p3.chips">
             <span>PRODUCT DESIGN</span><span>UX/UI</span>
           </div>
-          <a href="#" class="view-case">VIEW CASE STUDY →</a>
+          <a href="#" class="view-case" data-i18n="project.viewCase">VIEW CASE STUDY →</a>
         </div>
       </article>
 
@@ -269,13 +274,13 @@
           <img src="https://images.unsplash.com/photo-1518972559570-7cc1309f3229?auto=format&fit=crop&w=900&q=80" alt="Audiowave project" />
         </div>
         <div class="project-meta">
-          <div class="project-tags">MUSIC · PLATFORM</div>
+          <div class="project-tags" data-i18n="p4.tags">MUSIC · PLATFORM</div>
           <h3>AUDIOWAVE</h3>
-          <p>A streaming platform that pairs artist-first, bold visual design, seamless UX, and innovative discovery features.</p>
-          <div class="project-chips">
+          <p data-i18n="p4.body">A streaming platform that pairs artist-first, bold visual design, seamless UX, and innovative discovery features.</p>
+          <div class="project-chips" data-i18n-chips="p4.chips">
             <span>BRANDING</span><span>WEB DESIGN</span><span>MOTION</span>
           </div>
-          <a href="#" class="view-case">VIEW CASE STUDY →</a>
+          <a href="#" class="view-case" data-i18n="project.viewCase">VIEW CASE STUDY →</a>
         </div>
       </article>
     </div>
@@ -285,8 +290,8 @@
   <section id="about" class="about">
     <div class="about-grid">
       <div class="about-left">
-        <div class="section-label light">OUR STORY</div>
-        <h2 class="about-title">
+        <div class="section-label light"><span data-i18n="about.kicker">OUR STORY</span></div>
+        <h2 class="about-title" data-i18n-html="about.title">
           THE STUDIO<br/>BEHIND THE<br/>WORK
         </h2>
         <div class="about-image">
@@ -296,22 +301,22 @@
           <div class="about-badge">
             <span class="ab-check">✓</span>
             <div>
-              <div class="ab-title">TALENT FIRST</div>
-              <div class="ab-sub">No hierarchies. Just good work.</div>
+              <div class="ab-title" data-i18n="about.b1.title">TALENT FIRST</div>
+              <div class="ab-sub" data-i18n="about.b1.sub">No hierarchies. Just good work.</div>
             </div>
           </div>
           <div class="about-badge">
             <span class="ab-check">✓</span>
             <div>
-              <div class="ab-title">RESULTS DRIVEN</div>
-              <div class="ab-sub">Design that delivers ROI.</div>
+              <div class="ab-title" data-i18n="about.b2.title">RESULTS DRIVEN</div>
+              <div class="ab-sub" data-i18n="about.b2.sub">Design that delivers ROI.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="about-right">
-        <blockquote class="about-quote">
+        <blockquote class="about-quote" data-i18n-html="about.quote">
           "After 15 years in traditional agencies, we saw the same problems repeatedly. Talented designers spending more time in meetings than creating. Clients paying for process instead of progress.
           <br/><br/>
           So we built PixelForge differently. No endless meetings, no office politics, no pitches that promise everything. Just talented designers doing what they do best.
@@ -324,11 +329,11 @@
         <div class="about-stats">
           <div class="about-stat">
             <div class="as-num" data-count="50" data-suffix="+">0+</div>
-            <div class="as-label">Global Partners</div>
+            <div class="as-label" data-i18n="about.s1">Global Partners</div>
           </div>
           <div class="about-stat">
             <div class="as-num" data-count="98" data-suffix="%">0%</div>
-            <div class="as-label">Satisfaction Rate</div>
+            <div class="as-label" data-i18n="about.s2">Satisfaction Rate</div>
           </div>
         </div>
       </div>
@@ -349,13 +354,13 @@
 
   <!-- ============ CTA ============ -->
   <section id="contact" class="cta">
-    <div class="cta-kicker">GOT AN IDEA?</div>
+    <div class="cta-kicker" data-i18n="cta.kicker">GOT AN IDEA?</div>
     <h2 class="cta-title">
-      LET'S<br/>
-      <span class="cta-outline">CREATE</span>
+      <span data-i18n="cta.w1">LET'S</span><br/>
+      <span class="cta-outline" data-i18n="cta.w2">CREATE</span>
     </h2>
     <a href="mailto:hello@pixelforge.com" class="cta-pill magnetic">
-      <span>START YOUR PROJECT</span>
+      <span data-i18n="cta.btn">START YOUR PROJECT</span>
       <span class="arrow">→</span>
     </a>
   </section>
@@ -374,7 +379,7 @@
       </div>
     </div>
     <div class="midbar-sub">
-      <span>WE'RE CURRENTLY ACCEPTING NEW PROJECTS</span>
+      <span data-i18n="midbar.sub">WE'RE CURRENTLY ACCEPTING NEW PROJECTS</span>
     </div>
     <div class="midbar-meta">
       <span>HELLO@PIXELFORGE.COM</span>
@@ -387,17 +392,17 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo"><span class="logo-mark">▮</span> PIXELFORGE</div>
-        <p>A digital design studio crafting memorable experiences that drive business forward.</p>
+        <p data-i18n="footer.desc">A digital design studio crafting memorable experiences that drive business forward.</p>
       </div>
       <div class="footer-col">
-        <h4>LINKS</h4>
-        <a href="#work">Work</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <h4 data-i18n="footer.links">LINKS</h4>
+        <a href="#work" data-i18n="footer.work">Work</a>
+        <a href="#services" data-i18n="footer.services">Services</a>
+        <a href="#about" data-i18n="footer.about">About</a>
+        <a href="#contact" data-i18n="footer.contact">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>SOCIAL</h4>
+        <h4 data-i18n="footer.social">SOCIAL</h4>
         <a href="#">Instagram</a>
         <a href="#">Dribbble</a>
         <a href="#">Behance</a>
@@ -405,8 +410,8 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2025 PixelForge. All rights reserved.</span>
-      <span>PRIVACY · TERMS</span>
+      <span data-i18n="footer.copy">© 2025 PixelForge. All rights reserved.</span>
+      <span data-i18n="footer.legal">PRIVACY · TERMS</span>
     </div>
   </footer>
 
