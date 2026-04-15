@@ -167,6 +167,6 @@ if (heroPhoto && heroThumb && !matchMedia('(prefers-reduced-motion: reduce)').ma
     const y = window.scrollY;
     if (y > 800) return;
     heroPhoto.style.transform = `translateY(${y * 0.06}px)`;
-    heroThumb.style.transform = `rotate(-6deg) translateY(${y * -0.04}px)`;
+    heroThumb.style.transform = `rotate(6deg) translateY(${y * -0.04}px)`;
   }, { passive: true });
 }
