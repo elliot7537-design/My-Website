@@ -65,6 +65,9 @@ const translations = {
     'form.brand': 'Brand Identity', 'form.web': 'Web Design',
     'form.product': 'Digital Product', 'form.strategy': 'Creative Strategy',
     'form.motion': 'Motion Design',
+    'form.sending': 'SENDING...',
+    'form.success': 'Message sent. We\'ll be in touch soon.',
+    'form.error': 'Error: ',
     'midbar.sub': "WE'RE CURRENTLY ACCEPTING NEW PROJECTS",
     'footer.desc': 'A digital design studio crafting memorable experiences that drive business forward.',
     'footer.links': 'LINKS', 'footer.social': 'SOCIAL',
@@ -134,6 +137,9 @@ const translations = {
     'form.brand': 'Identidad de Marca', 'form.web': 'Diseño Web',
     'form.product': 'Producto Digital', 'form.strategy': 'Estrategia Creativa',
     'form.motion': 'Diseño en Movimiento',
+    'form.sending': 'ENVIANDO...',
+    'form.success': 'Mensaje enviado. Te contactaremos pronto.',
+    'form.error': 'Error: ',
     'midbar.sub': 'ACTUALMENTE ACEPTANDO NUEVOS PROYECTOS',
     'footer.desc': 'Un estudio de diseño digital creando experiencias memorables que impulsan el negocio.',
     'footer.links': 'ENLACES', 'footer.social': 'REDES',
@@ -412,8 +418,11 @@ if (contactForm) {
     const btn = contactForm.querySelector('button[type="submit"]');
     const originalText = btn.querySelector('span').textContent;
 
+    const lang = localStorage.getItem('pf-lang-v2') || 'es';
+    const dict = translations[lang] || translations.en;
+
     btn.disabled = true;
-    btn.querySelector('span').textContent = 'ENVIANDO...';
+    btn.querySelector('span').textContent = dict['form.sending'] || 'SENDING...';
     feedback.textContent = '';
     feedback.className = 'form-feedback';
 
@@ -435,13 +444,13 @@ if (contactForm) {
       const { error } = await window.supabase.from('customers').insert([customer]);
       if (error) throw error;
 
-      feedback.textContent = 'Mensaje enviado. Te contactaremos pronto.';
+      feedback.textContent = dict['form.success'] || 'Message sent.';
       feedback.className = 'form-feedback success';
       contactForm.reset();
     } catch (err) {
       console.error('Form error:', err);
       const msg = err.message || err.details || JSON.stringify(err);
-      feedback.textContent = 'Error: ' + msg;
+      feedback.textContent = (dict['form.error'] || 'Error: ') + msg;
       feedback.className = 'form-feedback error';
     } finally {
       btn.disabled = false;

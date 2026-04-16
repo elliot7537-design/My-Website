@@ -17,25 +17,25 @@ const btnDelete = document.getElementById('btn-delete');
 
 /* ---------- Labels ---------- */
 const PROJECT_LABELS = {
-  brand_identity: 'Identidad de Marca',
-  web_design: 'Diseño Web',
-  digital_product: 'Producto Digital',
-  creative_strategy: 'Estrategia Creativa',
-  motion_design: 'Diseño en Movimiento'
+  brand_identity: 'Brand Identity',
+  web_design: 'Web Design',
+  digital_product: 'Digital Product',
+  creative_strategy: 'Creative Strategy',
+  motion_design: 'Motion Design'
 };
 const STATUS_LABELS = {
-  new: 'Nuevo', contacted: 'Contactado', in_progress: 'En Progreso',
-  completed: 'Completado', cancelled: 'Cancelado'
+  new: 'New', contacted: 'Contacted', in_progress: 'In Progress',
+  completed: 'Completed', cancelled: 'Cancelled'
 };
 const PAYMENT_LABELS = {
-  pending: 'Pendiente', partial: 'Parcial', paid: 'Pagado'
+  pending: 'Pending', partial: 'Partial', paid: 'Paid'
 };
 
 /* ---------- Helpers ---------- */
 function timeAgo(dateStr) {
   const diff = Date.now() - new Date(dateStr).getTime();
   const mins = Math.floor(diff / 60000);
-  if (mins < 1) return 'ahora';
+  if (mins < 1) return 'just now';
   if (mins < 60) return mins + ' min';
   const hrs = Math.floor(mins / 60);
   if (hrs < 24) return hrs + 'h';
@@ -51,7 +51,7 @@ function isOverdue(dateStr) {
 
 function formatDate(dateStr) {
   if (!dateStr) return '—';
-  return new Date(dateStr).toLocaleDateString('es-MX', { day: 'numeric', month: 'short', year: 'numeric' });
+  return new Date(dateStr).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
 }
 
 let debounceTimer;
@@ -73,7 +73,7 @@ async function fetchCustomers() {
   } catch (err) {
     console.error('Fetch error:', err);
     customers = [];
-    tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Error al conectar con Supabase. Verifica tu configuración.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Error connecting to Supabase. Check your configuration.</td></tr>';
     return;
   }
   renderStats();
@@ -86,7 +86,7 @@ function renderStats() {
   document.getElementById('stat-new').textContent = customers.filter(c => c.status === 'new').length;
   document.getElementById('stat-progress').textContent = customers.filter(c => c.status === 'in_progress').length;
   document.getElementById('stat-paid').textContent = customers.filter(c => c.payment_status === 'paid').length;
-  document.getElementById('customer-count').textContent = customers.length + ' clientes';
+  document.getElementById('customer-count').textContent = customers.length + ' customers';
 }
 
 /* ---------- Render table ---------- */
@@ -100,7 +100,7 @@ function renderTable() {
   });
 
   if (filtered.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Sin resultados</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">No results</td></tr>';
     return;
   }
 
@@ -117,8 +117,8 @@ function renderTable() {
       <td><span class="badge badge-${c.status}">${STATUS_LABELS[c.status] || c.status}</span></td>
       <td><span class="badge badge-${c.payment_status}">${PAYMENT_LABELS[c.payment_status] || c.payment_status}</span></td>
       <td><span class="follow-up ${followClass}">${formatDate(c.follow_up_date)}</span></td>
-      <td title="${new Date(c.created_at).toLocaleString('es-MX')}">${timeAgo(c.created_at)}</td>
-      <td><button class="btn-edit" onclick="event.stopPropagation(); openModal('${c.id}')">EDITAR</button></td>
+      <td title="${new Date(c.created_at).toLocaleString('en-US')}">${timeAgo(c.created_at)}</td>
+      <td><button class="btn-edit" onclick="event.stopPropagation(); openModal('${c.id}')">EDIT</button></td>
     </tr>`;
   }).join('');
 
@@ -139,7 +139,7 @@ function openModal(id) {
   const c = customers.find(x => x.id === id);
   if (!c) return;
 
-  modalTitle.textContent = 'Editar: ' + c.name;
+  modalTitle.textContent = 'Edit: ' + c.name;
   editForm.elements.id.value = c.id;
   editForm.elements.name.value = c.name;
   editForm.elements.email.value = c.email;
@@ -185,14 +185,14 @@ editForm.addEventListener('submit', async (e) => {
     await fetchCustomers();
   } catch (err) {
     console.error('Update error:', err);
-    alert('Error al guardar: ' + err.message);
+    alert('Error saving: ' + err.message);
   }
 });
 
 /* ---------- Delete ---------- */
 btnDelete.addEventListener('click', async () => {
   const id = editForm.elements.id.value;
-  if (!confirm('¿Eliminar este cliente? Esta acción no se puede deshacer.')) return;
+  if (!confirm('Delete this customer? This cannot be undone.')) return;
 
   try {
     const { error } = await window.supabase
@@ -204,7 +204,7 @@ btnDelete.addEventListener('click', async () => {
     await fetchCustomers();
   } catch (err) {
     console.error('Delete error:', err);
-    alert('Error al eliminar: ' + err.message);
+    alert('Error deleting: ' + err.message);
   }
 });
 
@@ -235,5 +235,5 @@ document.getElementById('btn-refresh').addEventListener('click', fetchCustomers)
 if (window.supabase && window.supabase.from) {
   fetchCustomers();
 } else {
-  tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Configura Supabase en supabase-config.js para comenzar.</td></tr>';
+  tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Configure Supabase in supabase-config.js to get started.</td></tr>';
 }
