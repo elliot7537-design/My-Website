@@ -419,6 +419,7 @@ button { font-family: inherit; cursor: pointer; }
   border: 2px solid var(--ink);
   overflow: hidden;
   background: #ddd;
+  margin-top: clamp(80px, 14vw, 180px);
 }
 .hero-photo img {
   width: 100%;
