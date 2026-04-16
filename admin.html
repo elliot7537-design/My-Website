@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" translate="no">
+<html lang="en" translate="no">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
       </a>
       <div class="admin-bar-right">
         <span class="customer-count" id="customer-count">—</span>
-        <button class="btn-refresh" id="btn-refresh" title="Recargar">↻</button>
+        <button class="btn-refresh" id="btn-refresh" title="Refresh">↻</button>
       </div>
     </div>
   </header>
@@ -35,34 +35,34 @@
     </div>
     <div class="admin-stat">
       <div class="admin-stat-num" id="stat-new">0</div>
-      <div class="admin-stat-label">Nuevos</div>
+      <div class="admin-stat-label">New</div>
     </div>
     <div class="admin-stat">
       <div class="admin-stat-num" id="stat-progress">0</div>
-      <div class="admin-stat-label">En Progreso</div>
+      <div class="admin-stat-label">In Progress</div>
     </div>
     <div class="admin-stat">
       <div class="admin-stat-num" id="stat-paid">0</div>
-      <div class="admin-stat-label">Pagados</div>
+      <div class="admin-stat-label">Paid</div>
     </div>
   </section>
 
   <!-- ===== FILTERS ===== -->
   <section class="admin-filters">
-    <input type="search" id="search-input" placeholder="Buscar por nombre o email..." />
+    <input type="search" id="search-input" placeholder="Search by name or email..." />
     <select id="filter-status">
-      <option value="">Todos los estados</option>
-      <option value="new">Nuevo</option>
-      <option value="contacted">Contactado</option>
-      <option value="in_progress">En Progreso</option>
-      <option value="completed">Completado</option>
-      <option value="cancelled">Cancelado</option>
+      <option value="">All statuses</option>
+      <option value="new">New</option>
+      <option value="contacted">Contacted</option>
+      <option value="in_progress">In Progress</option>
+      <option value="completed">Completed</option>
+      <option value="cancelled">Cancelled</option>
     </select>
     <select id="filter-payment">
-      <option value="">Todos los pagos</option>
-      <option value="pending">Pendiente</option>
-      <option value="partial">Parcial</option>
-      <option value="paid">Pagado</option>
+      <option value="">All payments</option>
+      <option value="pending">Pending</option>
+      <option value="partial">Partial</option>
+      <option value="paid">Paid</option>
     </select>
   </section>
 
@@ -71,19 +71,19 @@
     <table class="admin-table" id="customer-table">
       <thead>
         <tr>
-          <th>Nombre</th>
+          <th>Name</th>
           <th>Email</th>
-          <th>Teléfono</th>
-          <th>Servicio</th>
-          <th>Estado</th>
-          <th>Pago</th>
-          <th>Seguimiento</th>
-          <th>Fecha</th>
+          <th>Phone</th>
+          <th>Service</th>
+          <th>Status</th>
+          <th>Payment</th>
+          <th>Follow-up</th>
+          <th>Created</th>
           <th></th>
         </tr>
       </thead>
       <tbody id="customer-tbody">
-        <tr><td colspan="9" class="empty-msg">Cargando...</td></tr>
+        <tr><td colspan="9" class="empty-msg">Loading...</td></tr>
       </tbody>
     </table>
   </section>
@@ -92,52 +92,52 @@
   <div class="modal-overlay" id="modal-overlay">
     <div class="modal" id="edit-modal">
       <div class="modal-header">
-        <h3 id="modal-title">Editar Cliente</h3>
+        <h3 id="modal-title">Edit Customer</h3>
         <button class="modal-close" id="modal-close">&times;</button>
       </div>
       <form id="edit-form">
         <input type="hidden" name="id" />
         <div class="modal-row">
-          <label>Nombre<input type="text" name="name" required /></label>
+          <label>Name<input type="text" name="name" required /></label>
           <label>Email<input type="email" name="email" required /></label>
         </div>
         <div class="modal-row">
-          <label>Teléfono<input type="tel" name="phone" /></label>
-          <label>Servicio
+          <label>Phone<input type="tel" name="phone" /></label>
+          <label>Service
             <select name="project_type">
-              <option value="brand_identity">Identidad de Marca</option>
-              <option value="web_design">Diseño Web</option>
-              <option value="digital_product">Producto Digital</option>
-              <option value="creative_strategy">Estrategia Creativa</option>
-              <option value="motion_design">Diseño en Movimiento</option>
+              <option value="brand_identity">Brand Identity</option>
+              <option value="web_design">Web Design</option>
+              <option value="digital_product">Digital Product</option>
+              <option value="creative_strategy">Creative Strategy</option>
+              <option value="motion_design">Motion Design</option>
             </select>
           </label>
         </div>
         <div class="modal-row">
-          <label>Estado
+          <label>Status
             <select name="status">
-              <option value="new">Nuevo</option>
-              <option value="contacted">Contactado</option>
-              <option value="in_progress">En Progreso</option>
-              <option value="completed">Completado</option>
-              <option value="cancelled">Cancelado</option>
+              <option value="new">New</option>
+              <option value="contacted">Contacted</option>
+              <option value="in_progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="cancelled">Cancelled</option>
             </select>
           </label>
-          <label>Pago
+          <label>Payment
             <select name="payment_status">
-              <option value="pending">Pendiente</option>
-              <option value="partial">Parcial</option>
-              <option value="paid">Pagado</option>
+              <option value="pending">Pending</option>
+              <option value="partial">Partial</option>
+              <option value="paid">Paid</option>
             </select>
           </label>
         </div>
         <div class="modal-row">
-          <label>Fecha de Seguimiento<input type="date" name="follow_up_date" /></label>
+          <label>Follow-up Date<input type="date" name="follow_up_date" /></label>
         </div>
-        <label>Notas<textarea name="notes" rows="4"></textarea></label>
+        <label>Notes<textarea name="notes" rows="4"></textarea></label>
         <div class="modal-actions">
-          <button type="button" class="btn-delete" id="btn-delete">Eliminar</button>
-          <button type="submit" class="btn-save">Guardar</button>
+          <button type="button" class="btn-delete" id="btn-delete">Delete</button>
+          <button type="submit" class="btn-save">Save</button>
         </div>
       </form>
     </div>
