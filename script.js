@@ -1,5 +1,5 @@
 /* ============================================================
-   PixelForge — interactions
+   Luna UX Mexico — interactions
    ============================================================ */
 
 /* ---------- i18n translations ---------- */
@@ -55,7 +55,7 @@ const translations = {
     'about.b1.sub': 'No hierarchies. Just good work.',
     'about.b2.title': 'RESULTS DRIVEN',
     'about.b2.sub': 'Design that delivers ROI.',
-    'about.quote': '"After 15 years in traditional agencies, we saw the same problems repeatedly. Talented designers spending more time in meetings than creating. Clients paying for process instead of progress.<br/><br/>So we built PixelForge differently. No endless meetings, no office politics, no pitches that promise everything. Just talented designers doing what they do best.<br/><br/>We create design that actually solves problems. We\'re obsessive about the details because that\'s what our clients pay us for. To care as much as they do.<br/><br/><strong>That\'s the PixelForge way. Simple, but not easy.</strong>',
+    'about.quote': '"After 15 years in traditional agencies, we saw the same problems repeatedly. Talented designers spending more time in meetings than creating. Clients paying for process instead of progress.<br/><br/>So we built Luna UX Mexico differently. No endless meetings, no office politics, no pitches that promise everything. Just talented designers doing what they do best.<br/><br/>We create design that actually solves problems. We\'re obsessive about the details because that\'s what our clients pay us for. To care as much as they do.<br/><br/><strong>That\'s the Luna UX Mexico way. Simple, but not easy.</strong>',
     'about.s1': 'Global Partners', 'about.s2': 'Satisfaction Rate',
     'cta.kicker': 'GOT AN IDEA?', 'cta.w1': "LET'S", 'cta.w2': 'CREATE',
     'cta.btn': 'START YOUR PROJECT',
@@ -73,7 +73,7 @@ const translations = {
     'footer.links': 'LINKS', 'footer.social': 'SOCIAL',
     'footer.work': 'Work', 'footer.services': 'Services',
     'footer.about': 'About', 'footer.contact': 'Contact',
-    'footer.copy': '© 2025 PixelForge. All rights reserved.',
+    'footer.copy': '© 2025 Luna UX Mexico. All rights reserved.',
     'footer.legal': 'PRIVACY · TERMS',
   },
   es: {
@@ -127,7 +127,7 @@ const translations = {
     'about.b1.sub': 'Sin jerarquías. Solo buen trabajo.',
     'about.b2.title': 'ORIENTADOS A RESULTADOS',
     'about.b2.sub': 'Diseño que genera ROI.',
-    'about.quote': '"Después de 15 años en agencias tradicionales, vimos los mismos problemas repetidamente. Diseñadores talentosos pasando más tiempo en reuniones que creando. Clientes pagando por proceso en vez de progreso.<br/><br/>Por eso construimos PixelForge de otra forma. Sin reuniones interminables, sin política de oficina, sin promesas vacías. Solo diseñadores talentosos haciendo lo que mejor saben hacer.<br/><br/>Creamos diseño que realmente resuelve problemas. Somos obsesivos con los detalles porque eso es lo que nuestros clientes nos pagan. Para preocuparnos tanto como ellos.<br/><br/><strong>Así es PixelForge. Simple, pero no fácil.</strong>',
+    'about.quote': '"Después de 15 años en agencias tradicionales, vimos los mismos problemas repetidamente. Diseñadores talentosos pasando más tiempo en reuniones que creando. Clientes pagando por proceso en vez de progreso.<br/><br/>Por eso construimos Luna UX Mexico de otra forma. Sin reuniones interminables, sin política de oficina, sin promesas vacías. Solo diseñadores talentosos haciendo lo que mejor saben hacer.<br/><br/>Creamos diseño que realmente resuelve problemas. Somos obsesivos con los detalles porque eso es lo que nuestros clientes nos pagan. Para preocuparnos tanto como ellos.<br/><br/><strong>Así es Luna UX Mexico. Simple, pero no fácil.</strong>',
     'about.s1': 'Socios Globales', 'about.s2': 'Tasa de Satisfacción',
     'cta.kicker': '¿TIENES UNA IDEA?', 'cta.w1': 'VAMOS A', 'cta.w2': 'CREAR',
     'cta.btn': 'INICIA TU PROYECTO',
@@ -145,7 +145,7 @@ const translations = {
     'footer.links': 'ENLACES', 'footer.social': 'REDES',
     'footer.work': 'Proyectos', 'footer.services': 'Servicios',
     'footer.about': 'Nosotros', 'footer.contact': 'Contacto',
-    'footer.copy': '© 2025 PixelForge. Todos los derechos reservados.',
+    'footer.copy': '© 2025 Luna UX Mexico. Todos los derechos reservados.',
     'footer.legal': 'PRIVACIDAD · TÉRMINOS',
   }
 };
