@@ -377,11 +377,12 @@ serviceRows.forEach((row, i) => {
 
 /* ---------- Init ---------- */
 (function init() {
-  // Clean up any stale value from the old key so returning visitors
-  // pick up the new Spanish default.
+  // Always start in Spanish on page load. Clear any cached values
+  // so returning visitors see the Spanish default regardless of
+  // what their browser previously stored.
   localStorage.removeItem('pf-lang');
-  const saved = localStorage.getItem('pf-lang-v2') || 'es';
-  applyLanguage(saved);
+  localStorage.removeItem('pf-lang-v2');
+  applyLanguage('es');
   // splitHeroChars is called inside applyLanguage
   setTimeout(() => document.querySelector('.hero-title')?.classList.add('animated'), 80);
 })();
