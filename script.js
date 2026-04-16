@@ -7,6 +7,8 @@ const translations = {
   en: {
     'nav.status': 'AVAILABLE', 'nav.work': 'WORK', 'nav.services': 'SERVICES',
     'nav.about': 'ABOUT', 'nav.contact': 'CONTACT',
+    'marquee.w1': 'CREATIVE', 'marquee.w2': 'DESIGN', 'marquee.w3': 'IMPACT',
+    'marquee2.w1': 'READY WHEN YOU ARE', 'marquee2.w2': "LET'S MAKE SOMETHING", 'marquee2.w3': 'BUILT DIFFERENT',
     'hero.tag': 'EST. 2020', 'hero.we': 'WE', 'hero.create': 'create',
     'hero.bold': 'BOLD', 'hero.desig': 'DESIG', 'hero.impac': 'IMPAC',
     'hero.tape': 'that drives business',
@@ -68,6 +70,8 @@ const translations = {
   es: {
     'nav.status': 'DISPONIBLE', 'nav.work': 'PROYECTOS', 'nav.services': 'SERVICIOS',
     'nav.about': 'NOSOTROS', 'nav.contact': 'CONTACTO',
+    'marquee.w1': 'CREATIVO', 'marquee.w2': 'DISEÑO', 'marquee.w3': 'IMPACTO',
+    'marquee2.w1': 'LISTOS CUANDO TÚ LO ESTÉS', 'marquee2.w2': 'HAGAMOS ALGO', 'marquee2.w3': 'HECHO DIFERENTE',
     'hero.tag': 'DESDE 2020', 'hero.we': 'CREA', 'hero.create': 'mos',
     'hero.bold': 'DISEÑO', 'hero.desig': 'AUDA', 'hero.impac': 'IMPAC',
     'hero.tape': 'que impulsa marcas',
@@ -373,7 +377,7 @@ serviceRows.forEach((row, i) => {
 
 /* ---------- Init ---------- */
 (function init() {
-  const saved = localStorage.getItem('pf-lang') || 'en';
+  const saved = localStorage.getItem('pf-lang') || 'es';
   applyLanguage(saved);
   // splitHeroChars is called inside applyLanguage
   setTimeout(() => document.querySelector('.hero-title')?.classList.add('animated'), 80);
