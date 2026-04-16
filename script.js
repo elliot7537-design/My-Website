@@ -154,7 +154,7 @@ function applyLanguage(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
-  localStorage.setItem('pf-lang', lang);
+  localStorage.setItem('pf-lang-v2', lang);
 
   // Re-split hero title characters for letter-reveal after text swap
   splitHeroChars();
@@ -377,7 +377,10 @@ serviceRows.forEach((row, i) => {
 
 /* ---------- Init ---------- */
 (function init() {
-  const saved = localStorage.getItem('pf-lang') || 'es';
+  // Clean up any stale value from the old key so returning visitors
+  // pick up the new Spanish default.
+  localStorage.removeItem('pf-lang');
+  const saved = localStorage.getItem('pf-lang-v2') || 'es';
   applyLanguage(saved);
   // splitHeroChars is called inside applyLanguage
   setTimeout(() => document.querySelector('.hero-title')?.classList.add('animated'), 80);
