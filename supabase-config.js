@@ -30,4 +30,4 @@ const SUPABASE_URL = 'https://opidlcwfpjsbkhyrxwlh.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l';
 
 // Initialize client (available globally)
-const supabase = window.supabase.createClient(sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l, sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l);
+const supabase = window.supabase.createClient(https://opidlcwfpjsbkhyrxwlh.supabase.co, sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l);
