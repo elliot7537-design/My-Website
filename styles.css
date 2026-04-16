@@ -846,6 +846,17 @@ button { font-family: inherit; cursor: pointer; }
   border-left: 3px solid #fff;
 }
 .about-quote strong { font-style: normal; font-family: var(--f-display); font-size: 18px; }
+.about-thumb {
+  width: 170px;
+  height: 210px;
+  border: 2px solid #fff;
+  transform: rotate(-5deg);
+  overflow: hidden;
+  background: #eee;
+  box-shadow: 8px 8px 0 #000;
+  margin: 0 0 40px 20px;
+}
+.about-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .about-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
