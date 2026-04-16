@@ -59,6 +59,12 @@ const translations = {
     'about.s1': 'Global Partners', 'about.s2': 'Satisfaction Rate',
     'cta.kicker': 'GOT AN IDEA?', 'cta.w1': "LET'S", 'cta.w2': 'CREATE',
     'cta.btn': 'START YOUR PROJECT',
+    'form.name': 'Your name', 'form.email': 'Your email',
+    'form.phone': 'Phone (optional)', 'form.notes': 'Tell us about your project...',
+    'form.selectService': 'Select a service',
+    'form.brand': 'Brand Identity', 'form.web': 'Web Design',
+    'form.product': 'Digital Product', 'form.strategy': 'Creative Strategy',
+    'form.motion': 'Motion Design',
     'midbar.sub': "WE'RE CURRENTLY ACCEPTING NEW PROJECTS",
     'footer.desc': 'A digital design studio crafting memorable experiences that drive business forward.',
     'footer.links': 'LINKS', 'footer.social': 'SOCIAL',
@@ -122,6 +128,12 @@ const translations = {
     'about.s1': 'Socios Globales', 'about.s2': 'Tasa de Satisfacción',
     'cta.kicker': '¿TIENES UNA IDEA?', 'cta.w1': 'VAMOS A', 'cta.w2': 'CREAR',
     'cta.btn': 'INICIA TU PROYECTO',
+    'form.name': 'Tu nombre', 'form.email': 'Tu email',
+    'form.phone': 'Teléfono (opcional)', 'form.notes': 'Cuéntanos sobre tu proyecto...',
+    'form.selectService': 'Selecciona un servicio',
+    'form.brand': 'Identidad de Marca', 'form.web': 'Diseño Web',
+    'form.product': 'Producto Digital', 'form.strategy': 'Estrategia Creativa',
+    'form.motion': 'Diseño en Movimiento',
     'midbar.sub': 'ACTUALMENTE ACEPTANDO NUEVOS PROYECTOS',
     'footer.desc': 'Un estudio de diseño digital creando experiencias memorables que impulsan el negocio.',
     'footer.links': 'ENLACES', 'footer.social': 'REDES',
@@ -143,6 +155,10 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (dict[key] != null) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.getAttribute('data-i18n-ph');
+    if (dict[key] != null) el.placeholder = dict[key];
   });
   document.querySelectorAll('[data-i18n-chips]').forEach(el => {
     const key = el.getAttribute('data-i18n-chips');
@@ -386,3 +402,49 @@ serviceRows.forEach((row, i) => {
   // splitHeroChars is called inside applyLanguage
   setTimeout(() => document.querySelector('.hero-title')?.classList.add('animated'), 80);
 })();
+
+/* ---------- Contact form → Supabase ---------- */
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const feedback = document.getElementById('form-feedback');
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const originalText = btn.querySelector('span').textContent;
+
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'ENVIANDO...';
+    feedback.textContent = '';
+    feedback.className = 'form-feedback';
+
+    const formData = new FormData(contactForm);
+    const customer = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone') || null,
+      project_type: formData.get('project_type'),
+      notes: formData.get('notes') || null,
+      status: 'new',
+      payment_status: 'pending'
+    };
+
+    try {
+      if (typeof supabase === 'undefined' || SUPABASE_URL === 'YOUR_SUPABASE_URL_HERE') {
+        throw new Error('Supabase not configured');
+      }
+      const { error } = await supabase.from('customers').insert([customer]);
+      if (error) throw error;
+
+      feedback.textContent = 'Mensaje enviado. Te contactaremos pronto.';
+      feedback.className = 'form-feedback success';
+      contactForm.reset();
+    } catch (err) {
+      console.error('Form error:', err);
+      feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos directamente.';
+      feedback.className = 'form-feedback error';
+    } finally {
+      btn.disabled = false;
+      btn.querySelector('span').textContent = originalText;
+    }
+  });
+}

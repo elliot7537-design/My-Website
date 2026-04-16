@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="google" content="notranslate" />
+  <title>PixelForge — Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <header class="admin-bar">
+    <div class="admin-bar-inner">
+      <a href="index.html" class="admin-logo">
+        <span class="logo-mark">▮</span> PIXELFORGE
+        <span class="admin-badge">ADMIN</span>
+      </a>
+      <div class="admin-bar-right">
+        <span class="customer-count" id="customer-count">—</span>
+        <button class="btn-refresh" id="btn-refresh" title="Recargar">↻</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== STATS ROW ===== -->
+  <section class="admin-stats" id="admin-stats">
+    <div class="admin-stat">
+      <div class="admin-stat-num" id="stat-total">0</div>
+      <div class="admin-stat-label">Total</div>
+    </div>
+    <div class="admin-stat">
+      <div class="admin-stat-num" id="stat-new">0</div>
+      <div class="admin-stat-label">Nuevos</div>
+    </div>
+    <div class="admin-stat">
+      <div class="admin-stat-num" id="stat-progress">0</div>
+      <div class="admin-stat-label">En Progreso</div>
+    </div>
+    <div class="admin-stat">
+      <div class="admin-stat-num" id="stat-paid">0</div>
+      <div class="admin-stat-label">Pagados</div>
+    </div>
+  </section>
+
+  <!-- ===== FILTERS ===== -->
+  <section class="admin-filters">
+    <input type="search" id="search-input" placeholder="Buscar por nombre o email..." />
+    <select id="filter-status">
+      <option value="">Todos los estados</option>
+      <option value="new">Nuevo</option>
+      <option value="contacted">Contactado</option>
+      <option value="in_progress">En Progreso</option>
+      <option value="completed">Completado</option>
+      <option value="cancelled">Cancelado</option>
+    </select>
+    <select id="filter-payment">
+      <option value="">Todos los pagos</option>
+      <option value="pending">Pendiente</option>
+      <option value="partial">Parcial</option>
+      <option value="paid">Pagado</option>
+    </select>
+  </section>
+
+  <!-- ===== CUSTOMER TABLE ===== -->
+  <section class="admin-table-wrap">
+    <table class="admin-table" id="customer-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>Servicio</th>
+          <th>Estado</th>
+          <th>Pago</th>
+          <th>Seguimiento</th>
+          <th>Fecha</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="customer-tbody">
+        <tr><td colspan="9" class="empty-msg">Cargando...</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ===== EDIT MODAL ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="edit-modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Editar Cliente</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <form id="edit-form">
+        <input type="hidden" name="id" />
+        <div class="modal-row">
+          <label>Nombre<input type="text" name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+        </div>
+        <div class="modal-row">
+          <label>Teléfono<input type="tel" name="phone" /></label>
+          <label>Servicio
+            <select name="project_type">
+              <option value="brand_identity">Identidad de Marca</option>
+              <option value="web_design">Diseño Web</option>
+              <option value="digital_product">Producto Digital</option>
+              <option value="creative_strategy">Estrategia Creativa</option>
+              <option value="motion_design">Diseño en Movimiento</option>
+            </select>
+          </label>
+        </div>
+        <div class="modal-row">
+          <label>Estado
+            <select name="status">
+              <option value="new">Nuevo</option>
+              <option value="contacted">Contactado</option>
+              <option value="in_progress">En Progreso</option>
+              <option value="completed">Completado</option>
+              <option value="cancelled">Cancelado</option>
+            </select>
+          </label>
+          <label>Pago
+            <select name="payment_status">
+              <option value="pending">Pendiente</option>
+              <option value="partial">Parcial</option>
+              <option value="paid">Pagado</option>
+            </select>
+          </label>
+        </div>
+        <div class="modal-row">
+          <label>Fecha de Seguimiento<input type="date" name="follow_up_date" /></label>
+        </div>
+        <label>Notas<textarea name="notes" rows="4"></textarea></label>
+        <div class="modal-actions">
+          <button type="button" class="btn-delete" id="btn-delete">Eliminar</button>
+          <button type="submit" class="btn-save">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

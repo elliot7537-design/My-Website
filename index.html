@@ -355,17 +355,37 @@
     </div>
   </div>
 
-  <!-- ============ CTA ============ -->
+  <!-- ============ CTA / CONTACT FORM ============ -->
   <section id="contact" class="cta">
     <div class="cta-kicker" data-i18n="cta.kicker">GOT AN IDEA?</div>
     <h2 class="cta-title">
       <span data-i18n="cta.w1">LET'S</span><br/>
       <span class="cta-outline" data-i18n="cta.w2">CREATE</span>
     </h2>
-    <a href="mailto:hello@pixelforge.com" class="cta-pill magnetic">
-      <span data-i18n="cta.btn">START YOUR PROJECT</span>
-      <span class="arrow">→</span>
-    </a>
+
+    <form id="contact-form" class="contact-form" autocomplete="on">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Tu nombre" data-i18n-ph="form.name" required />
+        <input type="email" name="email" placeholder="Tu email" data-i18n-ph="form.email" required />
+      </div>
+      <div class="form-row">
+        <input type="tel" name="phone" placeholder="Teléfono (opcional)" data-i18n-ph="form.phone" />
+        <select name="project_type" required>
+          <option value="" disabled selected data-i18n="form.selectService">Selecciona un servicio</option>
+          <option value="brand_identity" data-i18n="form.brand">Identidad de Marca</option>
+          <option value="web_design" data-i18n="form.web">Diseño Web</option>
+          <option value="digital_product" data-i18n="form.product">Producto Digital</option>
+          <option value="creative_strategy" data-i18n="form.strategy">Estrategia Creativa</option>
+          <option value="motion_design" data-i18n="form.motion">Diseño en Movimiento</option>
+        </select>
+      </div>
+      <textarea name="notes" rows="4" placeholder="Cuéntanos sobre tu proyecto..." data-i18n-ph="form.notes"></textarea>
+      <button type="submit" class="cta-pill magnetic">
+        <span data-i18n="cta.btn">INICIA TU PROYECTO</span>
+        <span class="arrow">→</span>
+      </button>
+      <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+    </form>
   </section>
 
   <!-- ============ MID-BAR NAV ============ -->
@@ -418,6 +438,9 @@
     </div>
   </footer>
 
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
