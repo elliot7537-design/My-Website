@@ -1086,7 +1086,7 @@ button { font-family: inherit; cursor: pointer; }
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 40px;
   padding-bottom: 40px;
   border-bottom: 1px solid #222;
