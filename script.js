@@ -440,7 +440,8 @@ if (contactForm) {
       contactForm.reset();
     } catch (err) {
       console.error('Form error:', err);
-      feedback.textContent = 'Error al enviar. Intenta de nuevo o escríbenos directamente.';
+      const msg = err.message || err.details || JSON.stringify(err);
+      feedback.textContent = 'Error: ' + msg;
       feedback.className = 'form-feedback error';
     } finally {
       btn.disabled = false;
