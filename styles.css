@@ -522,6 +522,17 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--ink);
 }
 
+/* ========= HIDE NON-HERO SECTIONS ========= */
+.marquee,
+.stats,
+.services,
+.work,
+.about,
+.marquee-dark,
+.cta,
+.midbar,
+.footer { display: none; }
+
 /* ========= STATS ========= */
 .stats {
   max-width: var(--container);
