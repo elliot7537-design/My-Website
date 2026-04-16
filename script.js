@@ -429,10 +429,10 @@ if (contactForm) {
     };
 
     try {
-      if (typeof supabase === 'undefined' || SUPABASE_URL === 'YOUR_SUPABASE_URL_HERE') {
-        throw new Error('Supabase not configured');
+      if (!window.supabase || !window.supabase.from) {
+        throw new Error('Supabase client not initialized. Check supabase-config.js.');
       }
-      const { error } = await supabase.from('customers').insert([customer]);
+      const { error } = await window.supabase.from('customers').insert([customer]);
       if (error) throw error;
 
       feedback.textContent = 'Mensaje enviado. Te contactaremos pronto.';

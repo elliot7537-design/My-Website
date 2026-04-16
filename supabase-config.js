@@ -26,8 +26,16 @@
  *  ╚══════════════════════════════════════════════════════════╝
  */
 
-const SUPABASE_URL = 'https://opidlcwfpjsbkhyrxwlh.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l';
+window.SUPABASE_URL = 'https://opidlcwfpjsbkhyrxwlh.supabase.co';
+window.SUPABASE_ANON_KEY = 'sb_publishable_vCNETlcakyADZh6e3hxNZg_qRp8H12l';
 
-// Initialize client (available globally)
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Grab the CDN library, then overwrite window.supabase with the client
+// so scripts can keep using `supabase.from(...)` naturally.
+(function () {
+  var lib = window.supabase;
+  if (!lib || !lib.createClient) {
+    console.error('Supabase CDN library not loaded');
+    return;
+  }
+  window.supabase = lib.createClient(window.SUPABASE_URL, window.SUPABASE_ANON_KEY);
+})();

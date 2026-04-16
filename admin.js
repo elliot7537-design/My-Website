@@ -63,7 +63,7 @@ function debounce(fn, ms) {
 /* ---------- Fetch ---------- */
 async function fetchCustomers() {
   try {
-    const { data, error } = await supabase
+    const { data, error } = await window.supabase
       .from('customers')
       .select('*')
       .order('created_at', { ascending: false });
@@ -176,7 +176,7 @@ editForm.addEventListener('submit', async (e) => {
   };
 
   try {
-    const { error } = await supabase
+    const { error } = await window.supabase
       .from('customers')
       .update(data)
       .eq('id', id);
@@ -195,7 +195,7 @@ btnDelete.addEventListener('click', async () => {
   if (!confirm('¿Eliminar este cliente? Esta acción no se puede deshacer.')) return;
 
   try {
-    const { error } = await supabase
+    const { error } = await window.supabase
       .from('customers')
       .delete()
       .eq('id', id);
@@ -232,7 +232,7 @@ overlay.addEventListener('click', (e) => {
 document.getElementById('btn-refresh').addEventListener('click', fetchCustomers);
 
 /* ---------- Init ---------- */
-if (typeof supabase !== 'undefined' && !SUPABASE_URL.includes('YOUR_')) {
+if (window.supabase && window.supabase.from) {
   fetchCustomers();
 } else {
   tbody.innerHTML = '<tr><td colspan="9" class="empty-msg">Configura Supabase en supabase-config.js para comenzar.</td></tr>';
